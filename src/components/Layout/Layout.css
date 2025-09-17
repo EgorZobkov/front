@@ -1,0 +1,19 @@
+.layout {
+  min-height: 100vh;
+  background-color: var(--color-background);
+  position: relative;
+}
+
+.layout__container {
+  width: min(100%, var(--max-content-width));
+  margin: 0 auto;
+  padding-block: var(--layout-padding-block);
+  padding-inline: var(--layout-padding-inline);
+  padding-bottom: calc(var(--layout-padding-block) + var(--bottom-nav-height));
+}
+
+@media (min-width: 768px) {
+  .layout__container {
+    padding-inline: clamp(2rem, 5vw, 3.5rem);
+  }
+}

@@ -1,34 +1,46 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import Layout from './components/Layout/Layout'
 import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
+    <Layout>
+      <section className="app">
+        <div className="app__logos">
+          <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
+            <img src={viteLogo} className="logo" alt="Vite logo" />
+          </a>
+          <a href="https://react.dev" target="_blank" rel="noreferrer">
+            <img src={reactLogo} className="logo react" alt="React logo" />
+          </a>
+        </div>
+
+        <div className="app__content">
+          <h1 className="app__title">Vite + React</h1>
+          <p className="app__subtitle">
+            Начните с мобильной версии — дальше будет проще расширять интерфейс.
+          </p>
+        </div>
+
+        <div className="app__card">
+          <button onClick={() => setCount((value) => value + 1)}>
+            count is {count}
+          </button>
+          <p>
+            Редактируйте <code>src/App.tsx</code> и сохраняйте, чтобы увидеть изменения
+            мгновенно.
+          </p>
+        </div>
+
+        <p className="app__hint">
+          Кликните по логотипам Vite и React, чтобы узнать больше.
         </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+      </section>
+    </Layout>
   )
 }
 
